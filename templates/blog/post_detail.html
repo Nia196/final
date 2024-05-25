@@ -1,0 +1,9 @@
+{% block content %}
+  <h2>{{ object.title }}</h2>
+  <p>{{ object.content }}</p>
+  <p>Author: {{ object.author.name }}</p>
+  <p>Category: {{ object.category.name }}</p>
+  <p>Published on: {{ object.create_date }}</p>
+  <a href="{% url 'post_update' object.pk %}">Edit</a>
+  <a href="{% url 'post_delete' object.pk %}">Delete</a>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% block content %}
+  <h2>{% if view.action == 'update' %}Update{% else %}New{% endif %} Post</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+    <a href="{% url 'post_list' %}" class="goback-button">Go back</a>
+  </form>
+{% endblock %}
